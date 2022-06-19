@@ -1,3 +1,29 @@
+# Weather App
+
+    install:
+        - yarn
+        - yarn start
+
+    test:
+        - yarn test
+
+    build:
+        - yarn build
+
+    create docker image:
+        - docker-compose -f docker-compose.prod.yml build
+
+    publish: 
+        - firebase deploy (need login)
+    
+
+# API KEY
+    - d1b73e7f46933b28841d684c79e09efb (OpenWeatherMap)
+
+
+
+
+
 # Getting Started with Create React App and Redux
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.

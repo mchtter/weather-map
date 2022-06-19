@@ -1,15 +1,22 @@
-import React from 'react';
-import { render } from '@testing-library/react';
+/* eslint-disable testing-library/no-debugging-utils */
+/* eslint-disable testing-library/await-async-query */
+/* eslint-disable testing-library/no-render-in-setup */
+/* eslint-disable testing-library/no-node-access */
+
+import { render, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
-import { store } from './app/store';
 import App from './App';
+import { store } from './app/store';
 
-test('renders learn react link', () => {
-  const { getByText } = render(
-    <Provider store={store}>
-      <App />
-    </Provider>
+beforeEach(() => {
+  render(
+      <Provider store={store}>
+          <App />
+      </Provider>
   );
+});
 
-  expect(getByText(/learn/i)).toBeInTheDocument();
+test('render default value', () => {
+  const element = screen.queryByTestId('selectedCity');
+  expect(element.textContent).toEqual('Antalya');
 });
